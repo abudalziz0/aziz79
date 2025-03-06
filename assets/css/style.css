@@ -1,0 +1,214 @@
+/* assets/css/style.css */
+:root {
+  --primary-color: #d4af37;    /* ذهبي رئيسي */
+  --secondary-color: #8c6b1f;  /* ذهبي داكن */
+  --dark-bg: #1a1a1a;         /* خلفية داكنة */
+  --text-color: #e0e0e0;      /* لون النص */
+  --accent-color: #f2e8c9;    /* لون التمييز */
+  --gradient: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+}
+
+/* إعادة تعيين الأنماط */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* الفئات المساعدة */
+.py-3 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.flex {
+  display: flex;
+}
+.justify-center {
+  justify-content: center;
+}
+.gap-8 {
+  gap: 2rem;
+}
+
+/* تنسيق الجسم */
+body {
+  direction: rtl;
+  font-family: 'Tajawal', sans-serif;
+  background: var(--dark-bg);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* أنماط شريط التنقل */
+nav {
+  background: var(--primary-color);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem 0;
+}
+nav ul li a {
+  color: var(--dark-bg);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+.nav-link:hover, .gold-hover:hover {
+  color: var(--accent-color);
+}
+
+/* أنماط قسم الرأس */
+header {
+  height: 100vh;
+  background: var(--gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+header .header-content h1 {
+  font-size: 4rem;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.7);
+  color: var(--dark-bg);
+}
+header .header-content p {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  color: var(--dark-bg);
+}
+.gradient-btn {
+  background: var(--gradient);
+  border: none;
+  color: var(--dark-bg);
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+.gradient-btn:hover {
+  transform: scale(1.05);
+}
+
+/* أنماط الأقسام */
+section {
+  padding: 2rem 0;
+}
+section h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+}
+
+/* حاوية البطاقات */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* أنماط البطاقات */
+.card, .subscription-tier, .dashboard-panel {
+  background: rgba(255,255,255,0.05);
+  padding: 1.5rem;
+  border-radius: 12px;
+  transition: transform 0.3s ease, background 0.3s ease;
+  margin: 1rem;
+  max-width: 300px;
+}
+.card:hover, .subscription-tier:hover, .dashboard-panel:hover {
+  transform: translateY(-10px);
+  background: rgba(255,255,255,0.1);
+}
+
+/* تنسيق التذييل */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: var(--primary-color);
+  color: var(--dark-bg);
+  box-shadow: 0 -4px 10px rgba(0,0,0,0.5);
+}
+
+/* شبكة فريق العمل في صفحة "من نحن" */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.team-member img {
+  width: 100%;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+.team-member img:hover {
+  transform: scale(1.05);
+}
+.gold-frame {
+  border: 2px solid var(--primary-color);
+  border-radius: 12px;
+}
+
+/* تنسيق النموذج في صفحة "تواصل معنا" */
+.luxury-form {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+}
+.luxury-form .form-group {
+  margin-bottom: 1.5rem;
+}
+.luxury-form .form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+.luxury-form .form-input {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.1);
+  color: var(--text-color);
+}
+.gold-button {
+  background: var(--primary-color);
+  color: var(--dark-bg);
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.gold-button:hover {
+  background: var(--secondary-color);
+}
+
+/* استجابة الشاشات الصغيرة */
+@media (max-width: 768px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+  .luxury-form {
+    padding: 1rem;
+  }
+  nav ul {
+    flex-direction: column;
+    text-align: center;
+  }
+  }
+  
